@@ -1,11 +1,13 @@
 import type { Database } from "./types/database";
 
 // Card representation
-export type Card = string; // e.g., "A of Hearts", "K of Spades"
+export type Card = Database['public']['Enums']['Card'];
 
 // Game outcome types
-export type HandOutcome = 'win' | 'loss' | 'push' | 'blackjack' | 'bust' | 'surrender';
-export type PlayerActionType = 'hit' | 'stand' | 'double' | 'split' | 'surrender' | 'insurance';
+export type HandOutcome = Database['public']['Enums']['HandOutcome'];
+
+// Actions a player can take
+export type PlayerAction = Database['public']['Enums']['PlayerAction'];
 
 // Game settings interface
 export type GameSettings = Database['public']['Tables']['GameSettings']['Row'];
@@ -17,27 +19,10 @@ export type Player = Database['public']['Tables']['Players']['Row'];
 export type BlackjackSession = Database['public']['Tables']['BlackJackSessions']['Row'];
 
 // Individual hand after splits
-export interface PlayerHand {
-  handIndex: number;
-  cards: Card[];
-  actions: PlayerActionType[];
-  finalValue: number;
-  outcome: HandOutcome;
-  payout: number;
-}
+export type PlayerHand = Database['public']['Tables']['PlayerHands']['Row'];
 
 // Player's complete action for a hand
-export interface PlayerAction {
-  playerId: string;
-  position: string;
-  initialCards: [Card, Card];
-  bet: number;
-  insuranceBet: number;
-  hands: PlayerHand[];
-  totalBet: number;
-  totalPayout: number;
-  netResult: number;
-}
+export type PlayerTurn = Database['public']['Tables']['PlayerTurns']['Row'];
 
 // Dealer's hand information
 export interface DealerHand {
@@ -59,7 +44,7 @@ export interface DeckState {
 export interface Hand {
   handNumber: number;
   dealer: DealerHand;
-  playerActions: PlayerAction[];
+  playerActions: PlayerTurn[];
   deckState: DeckState;
 }
 

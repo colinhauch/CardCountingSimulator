@@ -3,12 +3,12 @@ import { stdin as input, stdout as output } from 'process';
 import type { 
   BlackjackSession, 
   Hand, 
-  PlayerAction, 
+  PlayerTurn, 
   PlayerHand, 
   DealerHand, 
   GameSettings,
   Player,
-  PlayerActionType
+  PlayerAction
 } from './types.js';
 import { 
   Deck, 
@@ -134,7 +134,7 @@ export class BlackjackGame {
     };
   }
 
-  private async playPlayerHand(player: Player, _dealerUpCard: string, bet: number): Promise<PlayerAction> {
+  private async playPlayerHand(player: Player, _dealerUpCard: string, bet: number): Promise<PlayerTurn> {
     console.log(`\n--- ${player.name}'s turn ---`);
     console.log(`Bet placed: $${bet}`);
     
@@ -190,7 +190,7 @@ export class BlackjackGame {
     player: Player, 
     bet: number
   ): Promise<PlayerHand> {
-    const actions: PlayerActionType[] = [];
+    const actions: PlayerAction[] = [];
     let currentCards = [...cards];
     
     while (true) {
@@ -223,7 +223,7 @@ export class BlackjackGame {
         throw new Error('quit');
       }
       
-      const action = actionInput as PlayerActionType;
+      const action = actionInput as PlayerAction;
       actions.push(action);
       
       switch (action) {
