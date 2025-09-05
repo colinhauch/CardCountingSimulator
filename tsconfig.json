@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // Language and Environment
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "jsx": "react-jsx",
+
+    // Bundler mode
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    // Interop Constraints
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+
+    // Type Checking
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+
+    // Output
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    // Other Options
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}

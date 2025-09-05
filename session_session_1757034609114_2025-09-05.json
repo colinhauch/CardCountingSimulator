@@ -1,0 +1,132 @@
+{
+  "sessionId": "session_1757034609114",
+  "totalHandsDealt": 2,
+  "gameSettings": {
+    "gameType": "Blackjack",
+    "minBet": 10,
+    "maxBet": 500,
+    "dealerHitsSoft17": true,
+    "numOfDecks": 6,
+    "allowSurrender": false,
+    "allowDoubleAfterSplit": true,
+    "allowResplitAces": false,
+    "maxSplits": 3,
+    "insuranceAllowed": true,
+    "payoutBlackjack": 1.5,
+    "shuffleFrequency": "After every hand"
+  },
+  "players": [
+    {
+      "playerId": "player1",
+      "name": "Colin",
+      "position": "seat1",
+      "startingStackSize": 10000,
+      "currentStackSize": 10065
+    }
+  ],
+  "hands": [
+    {
+      "handNumber": 1,
+      "dealer": {
+        "upCard": "3 of Clubs",
+        "holeCard": "A of Diamonds",
+        "finalHand": [
+          "3 of Clubs",
+          "A of Diamonds",
+          "4 of Diamonds"
+        ],
+        "handValue": 18,
+        "busted": false
+      },
+      "playerActions": [
+        {
+          "playerId": "player1",
+          "position": "seat1",
+          "initialCards": [
+            "A of Diamonds",
+            "Q of Clubs"
+          ],
+          "bet": 10,
+          "insuranceBet": 0,
+          "hands": [
+            {
+              "handIndex": 0,
+              "cards": [
+                "A of Diamonds",
+                "Q of Clubs"
+              ],
+              "actions": [],
+              "finalValue": 21,
+              "busted": false,
+              "blackjack": true,
+              "outcome": "blackjack",
+              "payout": 25
+            }
+          ],
+          "totalBet": 10,
+          "totalPayout": 25,
+          "netResult": 15
+        }
+      ],
+      "deckState": {
+        "cardsRemaining": 310,
+        "shufflePoint": 52,
+        "penetration": 0.00641025641025641
+      }
+    },
+    {
+      "handNumber": 2,
+      "dealer": {
+        "upCard": "J of Hearts",
+        "holeCard": "8 of Hearts",
+        "finalHand": [
+          "J of Hearts",
+          "8 of Hearts"
+        ],
+        "handValue": 18,
+        "busted": false
+      },
+      "playerActions": [
+        {
+          "playerId": "player1",
+          "position": "seat1",
+          "initialCards": [
+            "2 of Spades",
+            "5 of Clubs"
+          ],
+          "bet": 50,
+          "insuranceBet": 0,
+          "hands": [
+            {
+              "handIndex": 0,
+              "cards": [
+                "2 of Spades",
+                "5 of Clubs",
+                "7 of Clubs",
+                "6 of Spades"
+              ],
+              "actions": [
+                "hit",
+                "hit",
+                "stand"
+              ],
+              "finalValue": 20,
+              "busted": false,
+              "blackjack": false,
+              "outcome": "win",
+              "payout": 100
+            }
+          ],
+          "totalBet": 50,
+          "totalPayout": 100,
+          "netResult": 50
+        }
+      ],
+      "deckState": {
+        "cardsRemaining": 305,
+        "shufflePoint": 52,
+        "penetration": 0.022435897435897436
+      }
+    }
+  ]
+}

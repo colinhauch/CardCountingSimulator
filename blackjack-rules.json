@@ -1,0 +1,14 @@
+{
+  "gameType": "Blackjack",
+  "minBet": 10,
+  "maxBet": 500,
+  "dealerHitsSoft17": true,
+  "numOfDecks": 6,
+  "allowSurrender": false,
+  "allowDoubleAfterSplit": true,
+  "allowResplitAces": false,
+  "maxSplits": 3,
+  "insuranceAllowed": true,
+  "payoutBlackjack": 1.5,
+  "shuffleFrequency": "After every hand"
+}

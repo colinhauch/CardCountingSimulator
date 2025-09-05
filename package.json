@@ -1,0 +1,52 @@
+{
+  "name": "card-counter-sim",
+  "version": "1.0.0",
+  "description": "Blackjack card counting simulator",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "tsx src/index.ts",
+    "dev:ui": "vite --config vite.config.ui.ts",
+    "build:ui": "vite build --config vite.config.ui.ts",
+    "demo": "tsx src/demo.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
+  },
+  "keywords": [
+    "blackjack",
+    "card-counting",
+    "simulator",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.3"
+  }
+}

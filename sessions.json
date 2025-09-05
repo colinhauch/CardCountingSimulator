@@ -1,0 +1,171 @@
+{
+    "sessionId": "abc123",
+    "numOfSeats": 5,
+    "totalHandsDealt": 150,
+    "gameSettings": {
+        "gameType": "Blackjack",
+        "minBet": 10,
+        "maxBet": 500,
+        "dealerHitsSoft17": true,
+        "numOfDecks": 6,
+        "allowSurrender": false,
+        "allowDoubleAfterSplit": true,
+        "allowResplitAces": false,
+        "maxSplits": 3,
+        "insuranceAllowed": true,
+        "payoutBlackjack": 1.5,
+        "shuffleFrequency": "After every hand"
+    },
+    "players": [
+        {
+            "playerId": "player1",
+            "name": "Alice",
+            "position": "alpha",
+            "startingStackSize": 1000,
+            "currentStackSize": 1000
+        },
+        {
+            "playerId": "player2",
+            "name": "Bob",
+            "position": "beta",
+            "startingStackSize": 800,
+            "currentStackSize": 800
+        }
+    ],
+    "hands": [
+        {
+            "handNumber": 1,
+            "timestamp": "2025-08-30T14:30:00Z",
+            "dealer": {
+                "upCard": "9 of Hearts",
+                "holeCard": "7 of Diamonds",
+                "finalHand": ["9 of Hearts", "7 of Diamonds"],
+                "handValue": 16,
+                "busted": false
+            },
+            "playerActions": [
+                {
+                    "playerId": "player1",
+                    "position": "alpha",
+                    "initialCards": ["K of Spades", "6 of Clubs"],
+                    "bet": 25,
+                    "insuranceBet": 0,
+                    "hands": [
+                        {
+                            "handIndex": 0,
+                            "cards": ["K of Spades", "6 of Clubs"],
+                            "actions": ["stand"],
+                            "finalValue": 16,
+                            "busted": false,
+                            "blackjack": false,
+                            "outcome": "loss",
+                            "payout": 0
+                        }
+                    ],
+                    "totalBet": 25,
+                    "totalPayout": 0,
+                    "netResult": -25
+                },
+                {
+                    "playerId": "player2",
+                    "position": "beta",
+                    "initialCards": ["A of Hearts", "Q of Diamonds"],
+                    "bet": 50,
+                    "insuranceBet": 0,
+                    "hands": [
+                        {
+                            "handIndex": 0,
+                            "cards": ["A of Hearts", "Q of Diamonds"],
+                            "actions": [],
+                            "finalValue": 21,
+                            "busted": false,
+                            "blackjack": true,
+                            "outcome": "blackjack",
+                            "payout": 75
+                        }
+                    ],
+                    "totalBet": 50,
+                    "totalPayout": 75,
+                    "netResult": 25
+                }
+            ],
+            "deckState": {
+                "cardsRemaining": 306,
+                "shufflePoint": 52,
+                "penetration": 0.17
+            }
+        },
+        {
+            "handNumber": 2,
+            "timestamp": "2025-08-30T14:32:15Z",
+            "dealer": {
+                "upCard": "6 of Clubs",
+                "holeCard": "K of Hearts",
+                "finalHand": ["6 of Clubs", "K of Hearts", "9 of Spades"],
+                "handValue": 25,
+                "busted": true
+            },
+            "playerActions": [
+                {
+                    "playerId": "player1",
+                    "position": "alpha",
+                    "initialCards": ["8 of Diamonds", "8 of Hearts"],
+                    "bet": 25,
+                    "insuranceBet": 0,
+                    "hands": [
+                        {
+                            "handIndex": 0,
+                            "cards": ["8 of Diamonds", "3 of Clubs"],
+                            "actions": ["split", "hit"],
+                            "finalValue": 11,
+                            "busted": false,
+                            "blackjack": false,
+                            "outcome": "win",
+                            "payout": 25
+                        },
+                        {
+                            "handIndex": 1,
+                            "cards": ["8 of Hearts", "2 of Spades", "A of Clubs"],
+                            "actions": ["hit", "hit"],
+                            "finalValue": 21,
+                            "busted": false,
+                            "blackjack": false,
+                            "outcome": "win",
+                            "payout": 25
+                        }
+                    ],
+                    "totalBet": 50,
+                    "totalPayout": 50,
+                    "netResult": 0
+                },
+                {
+                    "playerId": "player2",
+                    "position": "beta",
+                    "initialCards": ["10 of Spades", "6 of Diamonds"],
+                    "bet": 75,
+                    "insuranceBet": 0,
+                    "hands": [
+                        {
+                            "handIndex": 0,
+                            "cards": ["10 of Spades", "6 of Diamonds", "4 of Hearts"],
+                            "actions": ["hit"],
+                            "finalValue": 20,
+                            "busted": false,
+                            "blackjack": false,
+                            "outcome": "win",
+                            "payout": 75
+                        }
+                    ],
+                    "totalBet": 75,
+                    "totalPayout": 75,
+                    "netResult": 0
+                }
+            ],
+            "deckState": {
+                "cardsRemaining": 297,
+                "shufflePoint": 52,
+                "penetration": 0.20
+            }
+        }
+    ]
+}
