@@ -57,7 +57,7 @@
               ],
               "actions": [],
               "finalValue": 21,
-              "busted": false,
+              "busted": false,  
               "blackjack": true,
               "outcome": "blackjack",
               "payout": 25

@@ -1,3 +1,5 @@
+import type { Database } from "./types/database";
+
 // Card representation
 export type Card = string; // e.g., "A of Hearts", "K of Spades"
 
@@ -6,29 +8,13 @@ export type HandOutcome = 'win' | 'loss' | 'push' | 'blackjack' | 'bust' | 'surr
 export type PlayerActionType = 'hit' | 'stand' | 'double' | 'split' | 'surrender' | 'insurance';
 
 // Game settings interface
-export interface GameSettings {
-  gameType: 'Blackjack';
-  minBet: number;
-  maxBet: number;
-  dealerHitsSoft17: boolean;
-  numOfDecks: number;
-  allowSurrender: boolean;
-  allowDoubleAfterSplit: boolean;
-  allowResplitAces: boolean;
-  maxSplits: number;
-  insuranceAllowed: boolean;
-  payoutBlackjack: number;
-  shuffleFrequency: string;
-}
+export type GameSettings = Database['public']['Tables']['GameSettings']['Row'];
 
 // Player information
-export interface Player {
-  playerId: string;
-  name: string;
-  position: string;
-  startingStackSize: number;
-  currentStackSize: number;
-}
+export type Player = Database['public']['Tables']['Players']['Row'];
+
+// Complete session structure
+export type BlackjackSession = Database['public']['Tables']['BlackJackSessions']['Row'];
 
 // Individual hand after splits
 export interface PlayerHand {
@@ -36,8 +22,6 @@ export interface PlayerHand {
   cards: Card[];
   actions: PlayerActionType[];
   finalValue: number;
-  busted: boolean;
-  blackjack: boolean;
   outcome: HandOutcome;
   payout: number;
 }
@@ -79,11 +63,3 @@ export interface Hand {
   deckState: DeckState;
 }
 
-// Complete session structure
-export interface BlackjackSession {
-  sessionId: string;
-  totalHandsDealt: number;
-  gameSettings: GameSettings;
-  players: Player[];
-  hands: Hand[];
-}
